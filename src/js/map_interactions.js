@@ -94,7 +94,7 @@ function getLongtitude() {
     }
 }
 
-// Markt the position on the map with flag
+// Mark the position on the map with flag
 function marker(latLongArray) {
     var flagIcon = L.icon({
         iconUrl: "img/flag.png",
@@ -104,6 +104,12 @@ function marker(latLongArray) {
     });
 
     var marker = L.marker([latLongArray[0], latLongArray[1]], {icon: flagIcon}).addTo(map);
+    marker.on("click", onMarkClick)
+}
+
+// Click the mark go to learning page
+function onMarkClick(e) {
+    window.location = "description.html";
 }
 
 fetchData();
