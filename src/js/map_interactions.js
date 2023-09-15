@@ -1,31 +1,48 @@
-/*
+/* Initialize map and set the location in UQ*/
 
-Connect ALA API dataset, wait for the DOM(HTML,css, etc.) to load.
-https://api.ala.org.au/occurrences/occurrences/search?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&qc=-_nest_parent_%3A*
+var map = L.map('map').setView([-25.2744, 133.7751], 5);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+/* Get obeservation location from API
+Website URL: https://biocache.ala.org.au/occurrence/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&qc=-_nest_parent_%3A*&fq=occurrence_decade_i%3A%222020%22
+API URL: https://api.ala.org.au/occurrences/occurrences/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&fq=occurrence_decade_i%3A%222020%22&qc=-_nest_parent_%3A*
+Filter:
+    speciesGroup: Mammals
+    country: Australia
+    basisOfRecord: MACHINE_OBSERVATION
+    family: Macropodidae
+    year: 2020
+    month: December
 */
 
 // Define the API URL
 const apiUrl = "https://api.ala.org.au/occurrences/occurrences/search";
-
-// Query parameters
 const queryParams = {
-    // q: "text%3Aobservation%20AND%20taxa%3A%22kangaroo%22",
-    // qualityProfile: "ALA",
-    // qc: "-_nest_parent_%3A*",
-    pageSize: 10,
-    startIndex: 0
+    q: "species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22",
+    qualityProfile: "ALA",
+    fq: "month%3A%2212%22",
+    fq: "occurrence_decade_i%3A%222020%22",
+    qc: "-_nest_parent_%3A*",
+    pageSize: 50,
+    startIndex: 0,
 };
 
+
 // Create the full URL by appending query parameters
-const fullUrl = new URL(apiUrl); // Create a "URL" object from a given URL string "apiUrl"
+const fullUrl = new URL(apiUrl);    // Create a "URL" object from a given URL string "apiUrl"
+var longtitudeDict = {}    // Count similar longtitude Point01
+
 function fetchData() {
-    fullUrl.search = "?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&qc=-_nest_parent_%3A*"
+    fullUrl.search = "?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&fq=occurrence_decade_i%3A%222020%22&qc=-_nest_parent_%3A*"
     for (const key in queryParams) {
-        fullUrl.searchParams.append(key, queryParams[key])
+        fullUrl.searchParams.append(key, queryParams[key]);
     }
 
-    console.log("Current URL:", fullUrl.toString());
-
+    // console.log(fullUrl.toString());
+    
     // Make a GET request to the API
     fetch(fullUrl)
         .then((response) => {
@@ -41,33 +58,44 @@ function fetchData() {
 
         .then((data) => {
             // Access the value of the field
-            const occurrences = data.occurrences;
+            var occurrences = data.occurrences;
             console.log(occurrences);
             for (let i = 0; i < occurrences.length; i++) {
-                // Get data from API
-                const item = occurrences[i]
-                const vernacularName = item.vernacularName;
-                // if ((vernacularName.includes("kangaroo", 0)) || (vernacularName.includes("Kangaroo", 0))) {
-                    const decimalLatitude = item.decimalLatitude;
-                    const decimalLongitude = item.decimalLongitude;
-                    const imageUrl = item.imageUrl;
-                    console.log(`Name is ${vernacularName}. Latitude is ${decimalLatitude} and Longitude is ${decimalLongitude}`);
-                // }
+                var item = occurrences[i];
+                var scientificName = item.scientificName;
+                var vernacularName = item.vernacularName;
+                var pointLatLong = item.point01;
+                // console.log(`SN is ${scientificName} and VN is ${vernacularName}. (Long, Lat) is (${decimalLatitude}, ${decimalLongitude})`);
+                
+                // Count similar longtitude Point01
+                if (pointLatLong in longtitudeDict) {
+                    longtitudeDict[pointLatLong] += 1 
+                } else {
+                    longtitudeDict[pointLatLong] = 1
+                }
             }
+            
             // Update the start parameter for the next page
             queryParams.startIndex += queryParams.pageSize;
 
             // If there are more pages to fetch, call fetchData recursively
             if (occurrences.length === queryParams.pageSize) {
                 fetchData();
+            } else {
+                getLongtitude();
             }
-        })
-
-        .catch((error) => {
-            // Handle any errors that occurred during the fetch
-            console.error("Fetch error:", error)
-        });
+    })
 }
 
-// Start fetching data for the first page
+function getLongtitude() {
+    console.log(longtitudeDict)
+    for (const key in longtitudeDict) {
+        const latLongArray = key.split(",");
+        const value = longtitudeDict[key];
+        if (value > 30) {
+            var marker = L.marker([latLongArray[0], latLongArray[1]]).addTo(map);
+        }
+    }
+}
+
 fetchData();
