@@ -8,24 +8,20 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 /* Get obeservation location from API
 Website URL: https://biocache.ala.org.au/occurrence/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&qc=-_nest_parent_%3A*&fq=occurrence_decade_i%3A%222020%22
-API URL: https://api.ala.org.au/occurrences/occurrences/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&fq=occurrence_decade_i%3A%222020%22&qc=-_nest_parent_%3A*
+API URL: https://api.ala.org.au/occurrences/occurrences/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&qc=-_nest_parent_%3A*
 Filter:
     speciesGroup: Mammals
     country: Australia
     basisOfRecord: MACHINE_OBSERVATION
     family: Macropodidae
-    year: 2020
-    month: December
 */
 
 // Define the API URL
 const apiUrl = "https://api.ala.org.au/occurrences/occurrences/search";
 const queryParams = {
-    q: "species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22",
-    qualityProfile: "ALA",
-    fq: "month%3A%2212%22",
-    fq: "occurrence_decade_i%3A%222020%22",
-    qc: "-_nest_parent_%3A*",
+    // q: "species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22",
+    // qualityProfile: "ALA",
+    // qc: "-_nest_parent_%3A*",
     pageSize: 50,
     startIndex: 0,
 };
@@ -36,7 +32,7 @@ const fullUrl = new URL(apiUrl);    // Create a "URL" object from a given URL st
 var longtitudeDict = {}    // Count similar longtitude Point01
 
 function fetchData() {
-    fullUrl.search = "?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&fq=month%3A%2212%22&fq=occurrence_decade_i%3A%222020%22&qc=-_nest_parent_%3A*"
+    fullUrl.search = "?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3AMACHINE_OBSERVATION%20AND%20taxa%3A%22Macropodidae%22&qualityProfile=ALA&qc=-_nest_parent_%3A*"
     for (const key in queryParams) {
         fullUrl.searchParams.append(key, queryParams[key]);
     }
@@ -93,9 +89,21 @@ function getLongtitude() {
         const latLongArray = key.split(",");
         const value = longtitudeDict[key];
         if (value > 30) {
-            var marker = L.marker([latLongArray[0], latLongArray[1]]).addTo(map);
+            marker(latLongArray)
         }
     }
+}
+
+// Markt the position on the map with flag
+function marker(latLongArray) {
+    var flagIcon = L.icon({
+        iconUrl: "img/flag.png",
+        iconSize:     [40, 40], // size of the icon
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    var marker = L.marker([latLongArray[0], latLongArray[1]], {icon: flagIcon}).addTo(map);
 }
 
 fetchData();
