@@ -1,7 +1,22 @@
-body{
+.custom-background{
     background-color: #d9f1ff;
 }
-
+.description_img {
+  width: 560px;
+  height: 315px;
+}
+.custom-button{
+  background: url(../img/button_bg.png);
+  cursor:pointer;
+  border: none;
+  text-align:right;
+  float:right;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 30px;
+  margin-right: 0px;
+}
 .chat_icon,
 .roo-guide-icon {
   position: absolute;
@@ -9,7 +24,6 @@ body{
   left: 136px;
   width: 1344.86px;
   height: 303.44px;
-  overflow: hidden;
 
 }
 .roo-guide-icon {
@@ -38,7 +52,7 @@ body{
   left: 553px;
   width: 857px;
   height: 130.87px;
-  overflow: hidden;
+
 }
 .frame,
 .frame-group {
@@ -49,7 +63,7 @@ body{
   height: 524.87px;
   top: 408px;
   left: -56px;
-  overflow: hidden;
+
 }
 
 .frame-parent {
@@ -64,7 +78,7 @@ body{
   font-family: var(--font-comic-sans-ms);
 }
 
-/* Hide the image by default */
+/* Hide the image by default
 .description_img {
     display: none;
-}
+} */
