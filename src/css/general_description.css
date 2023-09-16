@@ -32,7 +32,7 @@ body{
   display: inline-block;
   width: 857px;
 }
-.frame1 {
+.frame-content {
   position: absolute;
   top: 197px;
   left: 553px;
@@ -63,11 +63,7 @@ body{
   color: var(--color-black);
   font-family: var(--font-comic-sans-ms);
 }
-.video-img-change{
-    position: relative;
-    top: 208px;
-    left: 500px;
-}
+
 /* Hide the image by default */
 .description_img {
     display: none;
