@@ -5,79 +5,85 @@
   width: 560px;
   height: 315px;
 }
+
 .custom-button{
   background: url(../img/button_bg.png);
   cursor:pointer;
   border: none;
-  text-align:right;
   float:right;
   padding-left: 30px;
   padding-bottom: 10px;
   padding-top: 10px;
   padding-right: 30px;
-  margin-right: 0px;
-}
-.chat_icon,
-.roo-guide-icon {
-  position: absolute;
-  top: 110.71px;
-  left: 136px;
-  width: 1344.86px;
-  height: 303.44px;
-
-}
-.roo-guide-icon {
-  height: 69.73%;
-  width: 31.54%;
-  top: 0;
-  right: 64.68%;
-  bottom: 30.27%;
-  left: 3.78%;
-  max-width: 100%;
-  max-height: 100%;
-}
-.hi-alex {
-  margin: 0;
-}
-.hi-alex-look-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  width: 857px;
-}
-.frame-content {
-  position: absolute;
-  top: 197px;
-  left: 553px;
-  width: 857px;
-  height: 130.87px;
-
-}
-.frame,
-.frame-group {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1480.86px;
-  height: 524.87px;
-  top: 408px;
-  left: -56px;
-
+  margin-right: 150px;
+  
 }
 
-.frame-parent {
+.background_img{
   position: relative;
-  background-color: var(--color-aliceblue);
-  width: 100%;
-  height: 1024px;
-  overflow: hidden;
-  text-align: left;
-  font-size: 30px;
-  color: var(--color-black);
-  font-family: var(--font-comic-sans-ms);
+  padding-top: 100px;
+  padding-left: 60px;
 }
 
+.background_chat {
+  height: 315px;
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Vertically center content */
+  position: relative;
+}
+.chat_icon{
+  height: 100%;
+}
+.content-container{
+  padding-left: 20px;
+}
+.row.background_chat{
+  z-index: 999;
+  position: absolute;
+}
+
+
+
+#map {
+  z-index: 1;
+  height: 100vh;    /* The height is 400 pixels */
+  width: 100vw;    /* The width is the width of the web page */
+  background-color: #aad3df;
+}
+
+.flex-header {
+  z-index: 2;
+  position: fixed;
+  text-align: center;
+  height: auto;
+  width: calc(100vw - 10vw);
+  margin: 0 5vw;
+  padding-top: 10px;
+}
+
+#wooden-tablet-header {
+  z-index: 1;
+  position: relative;
+  height: 15vh;
+  min-height: 100px;
+}
+
+.flex-header-menu {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  align-items: center;
+  top: -50px;
+  margin: 0 10vw;
+}
+
+.nav-link {
+
+  color: white !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
 /* Hide the image by default
 .description_img {
     display: none;

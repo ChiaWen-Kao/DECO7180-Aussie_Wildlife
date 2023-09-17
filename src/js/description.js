@@ -7,8 +7,8 @@ let currentImageIndex = 0; // Index of the current image to be displayed
 // Add a click event listener to the button
 changeImageButton.addEventListener('click', function () {
     // Call fetchData to fetch a new image from the API
-    console.log('Button clicked');
-    console.log(apiImage);
+    // console.log('Button clicked');
+    // console.log(apiImage);
     updateImage();
 });
 
