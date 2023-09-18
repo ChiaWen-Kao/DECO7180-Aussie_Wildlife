@@ -45,7 +45,7 @@ const queryParams = {
 const fullUrl = new URL(apiUrl);    // Create a "URL" object from a given URL string "apiUrl"
 
 function fetchData() {
-    fullUrl.search = "?q=taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=occurrence_decade_i%3A%222020%22&fq=species_group%3A%22Mammals%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr1902%22&fq=state%3A%22Queensland%22&fq=month%3A%229%22&qc=-_nest_parent_%3A*"
+    fullUrl.search = "?q=taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=occurrence_decade_i%3A%222020%22&fq=species_group%3A%22Mammals%22&fq=multimedia%3A%22Image%22&fq=state%3A%22Victoria%22&fq=data_resource_uid%3A%22dr1902%22&fq=month%3A%228%22&qc=-_nest_parent_%3A*"
     for (const key in queryParams) {
         fullUrl.searchParams.append(key, queryParams[key]);
     }
