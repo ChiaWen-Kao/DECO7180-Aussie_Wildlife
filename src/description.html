@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/general_description.css" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/general_description.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <title>Document</title>
+
 </head>
-<body>
-    <div class="frame-parent">
-        <button id="videoBtn">Video</button>
-        <button id="imageBtn">Image</button>
-        <div class = "video-img-change">
-            <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/QKO3sqic5fc?si=QsMUb0zmLx-oM3Lj" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen></iframe>
-            <img id="image" class="description_img" alt="" width="560" height="315" src="img/Kangaroo_img.jpg" />
+
+<body class="custom-background">
+  <div class="container text-center">
+    <div class="row">
+      <img id="wooden-tablet-header" src="img/wooden-tablet-header.png" />
+      <header class="flex-header-menu header-menu" aria-label="Main Menu">
+        <div class="header-links">
+          <a href="Home.html" class="nav-link" aria-label="Home" tab-index="0">Home</a>
         </div>
-        
-          <div class="frame-group">
-            <img class="chat_icon" alt="" src="img/Chat_Background.svg" />
-  
-            <img class="roo-guide-icon" alt="" src="img/Kangaroo.svg" />
-  
-            <div class="frame1">
-              <div class="hi-alex-look-container">
-                <p class="hi-alex">Hi, Alex!</p>
-                <p class="hi-alex">
-                  Look at the cool map we have. Where do you wanna go on our
-                  adventure today?
-                </p>
-              </div>
-            </div>
+        <div>
+          <a href="#" class="nav-link" aria-label="Quiz Time" tab-index="0">Quiz Time</a>
         </div>
+        <div>
+          <a class="nav-link" aria-label="Point" tab-index="0">Point</a>
+        </div>
+      </header>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-9">
+        <div class="video-img-change">
+          <!-- <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/QKO3sqic5fc?si=QsMUb0zmLx-oM3Lj" 
+                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen></iframe> -->
+          <img id="Image_switch" class="button_img" width="560" height="315" alt="" src="img/Kangaroo_img.jpg" />
+        </div>
+
       </div>
-      <script src="js/description.js"></script>
+
+
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <button id="changeImageButton" class="custom-button w-25">Next photo</button>
+
+      </div>
+    </div>
+
+    <div class="row background_chat">
+      <div class="col-4">
+        <img class="chat_icon" alt="" src="img/Kangaroo.svg" width="300px" />
+      </div>
+      <div class="col-6 content-container">
+        <p class="context">Fun fact 1:
+          Grey kangaroo is the most common kangaroo in Queensland.
+          Their habitats spread across the state but mostly along the east coast
+        </p>
+
+
+      </div>
+    </div>
+    <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%">
+
+  </div>
+
+  <script src="js/description.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
