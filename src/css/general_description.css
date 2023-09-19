@@ -84,6 +84,10 @@
   font-size: 20px !important;
   font-weight: bold !important;
 }
+.context{
+  padding-top:30px;
+  font-weight: bold;
+}
 /* Hide the image by default
 .description_img {
     display: none;
