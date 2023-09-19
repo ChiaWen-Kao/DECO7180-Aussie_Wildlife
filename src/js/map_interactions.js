@@ -85,8 +85,8 @@ function fetchData() {
             // if (occurrences.length === queryParams.pageSize) {
             //     fetchData();
             // } else {
-                getMostOccurence(vic_dataArray);
-                getMostOccurence(qld_dataArray);
+                getMostOccurence(vic_dataArray, "victoria");
+                getMostOccurence(qld_dataArray, "queensland");
                 getMostOccurence(sa_dataArray);
                 getMostOccurence(tas_dataArray);
                 getMostOccurence(wa_dataArray);
@@ -96,7 +96,7 @@ function fetchData() {
     })
 }
 
-function getMostOccurence(dataArray) {
+function getMostOccurence(dataArray, state) {
     // Static longtitude point001
     longtitudeDict = {};
 
@@ -125,12 +125,16 @@ function getMostOccurence(dataArray) {
 
     console.log(`Place: ${maxKey}. Value: ${maxValue}`);
     if (maxKey != null) {
-        marker(maxKey)
+        if (state == "victoria") {
+            marker(maxKey, "victoria");
+        } else if (state == "queensland"){
+            marker(maxKey, "queensland");
+        }
     }
 }
 
 // Mark the position on the map with flag
-function marker(maxKey) {
+function marker(maxKey, state) {
     var flagIcon = L.icon({
         iconUrl: "img/flag.png",
         iconSize:     [40, 40], // size of the icon
@@ -142,12 +146,19 @@ function marker(maxKey) {
     console.log(`lat: ${latLongArray[0]}    long: ${latLongArray[1]}`)
 
     var marker = L.marker([latLongArray[0], latLongArray[1]], {icon: flagIcon}).addTo(map);
-    marker.on("click", onMarkClick)
+    marker.on("click", function(e) {
+        onMarkClick(e, state);
+    });
 }
 
 // Click the mark go to learning page
-function onMarkClick(e) {
-    window.location = "description.html";
+function onMarkClick(e, state) {
+    if (state == "victoria") {
+        window.location = "description_victoria.html";
+    } else if (state == "queensland") {
+        window.location = "description.html";
+    }
+    
 }
 
 fetchData();
