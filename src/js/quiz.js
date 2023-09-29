@@ -6,6 +6,8 @@ const option1Img = [
 ];
 const option1Text = ["Grass and Leaves", "Insects and Small Animals", "Fish"];
 
+var points = 100;
+
 /* Question */
 const questionContainer = document.getElementById("quiz-question");
 
@@ -15,6 +17,31 @@ question.innerHTML = `${question1[0]}`;
 
 questionContainer.appendChild(question)
 
+/* Next Dialog */
+const dialogTutorial = [
+    "I’m sure that you had a great journey today. Now we would like to know how you’ve learned about us.",
+    "30 points rewarded for each correct answer. Have fun!"
+]
+const text = document.getElementById("text");
+const next = document.getElementById("next");
+
+var i = 0
+
+next.addEventListener("click", function() {
+
+    if (i < dialogTutorial.length) {
+        text.innerHTML = `
+            ${dialogTutorial[1]}
+        `;
+        i++;
+    }
+
+    if (i == dialogTutorial.length) {
+        blackMaskContainer.classList.remove("black-mask");
+    }
+});
+
+
 /* Options */
 const optionCardContainer = document.getElementById("quiz-option");
 
@@ -23,13 +50,13 @@ for (let i = 0; i < option1Img.length; i++) {
     optioncard.classList.add("col-md-3");
 
     optioncard.innerHTML = `
-                <div class="card btn btn-outline-success me-2" id="answer${i}" style="width: 18rem;">
-                    <img src="${option1Img[i]}" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-text">${option1Text[i]}</p>
-                    </div>
-                </div>
-            `;
+        <div class="card btn btn-outline-success me-2" id="answer${i}" style="width: 18rem;">
+            <img src="${option1Img[i]}" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">${option1Text[i]}</p>
+            </div>
+        </div>
+    `;
 
     optioncard.addEventListener("click", function() {
     const selectedAnswer = option1Text[i];
@@ -37,12 +64,35 @@ for (let i = 0; i < option1Img.length; i++) {
     // Check if the selected answer matches the correct answer
     if (selectedAnswer === "Grass and Leaves") {
         // The answer is correct
-        alert("Correct!");
+        const cardOption = document.getElementById("answer" + i);
+        const tick = document.createElement("img");
+        tick.style.position = "absolute";
+        tick.style.bottom = "0";
+        tick.style.right = "0";
+        tick.style.width = "20%";
+        tick.src = "https://img.icons8.com/color/48/FFFFFF/checked--v1.png";
 
+        cardOption.style.background = "var(--bs-btn-color)";
+        cardOption.style.color = "white";
+
+        cardOption.appendChild(tick);
+
+        text.innerHTML = `
+            Well Done !! You are correct!!
+        `;
+
+        // Earn points
+        points = points + 30;
+        console.log(points);
+        
     } else {
         // The answer is wrong
-        alert("Wrong. Try again.");
+        text.innerHTML = `
+            Oh no ! Kangaroo eat grass and leaves.
+        `;
     }
+
+    
 });
 
     // Create card in the container
@@ -53,29 +103,4 @@ for (let i = 0; i < option1Img.length; i++) {
 /* First in Quiz Page (Black Mask) */
 const blackMaskContainer = document.getElementById("black-mask");
 blackMaskContainer.classList.add("black-mask");
-
-/* Next Dialog */
-const dialogTutorial = [
-    "I’m sure that you had a great journey today. Now we would like to know how you’ve learned about us.",
-    "30 points rewarded for each correct answer. Have fun!"
-]
-const text = document.getElementById("text")
-const next = document.getElementById("next");
-
-var i = 0
-
-next.addEventListener("click", function() {
-
-    if (i < dialogTutorial.length) {
-        text.innerHTML = `
-                    ${dialogTutorial[1]}
-                `;
-        i++;
-    }
-
-    if (i == dialogTutorial.length) {
-        blackMaskContainer.classList.remove("black-mask");
-    }
-});
-
 
