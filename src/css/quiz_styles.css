@@ -1,0 +1,75 @@
+body {
+    background-color: azure;
+}
+
+.header {
+    font-family: 'Lilita One', cursive;
+    color: white;
+    font-size: x-large;
+    height: fit-content;
+}
+
+/* Wooden Tablet Header */
+.wooden-tablet-header {
+    position: relative;
+    z-index: 4;
+    top: 10px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+.quiz {
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+    font-family: 'Lilita One', cursive;
+}
+
+/* Black Mask */
+.black-mask {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+/* Dialog */
+.wooden-tablet-dialog  {
+    position: absolute;
+    z-index: 4;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    height: 180px;
+    background-image: url('../img/wooden-dialog.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Lilita One', cursive;
+}
+
+.guide {
+    background-image: url('../img/Kangaroo.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.next {
+    background-image: url("https://img.icons8.com/matisse/0/E6C594/next.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position-x: 30%;
+    background-position-y: 90%;
+}
+
+.next {
+    border-style: none !important;
+}
