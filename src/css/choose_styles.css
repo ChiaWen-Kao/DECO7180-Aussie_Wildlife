@@ -1,0 +1,65 @@
+/* Wooden tablet Header */
+.header {
+    font-family: 'Lilita One', cursive;
+    color: white;
+    font-size: x-large;
+    height: fit-content;
+}
+
+.wooden-tablet-header {
+    position: relative;
+    z-index: 4;
+    top: 10px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+/* Background */
+.background {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/kangaroo-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/* Button */
+.animal-theme-btn {
+    position: relative;
+    z-index: 3;
+    color: black !important;
+    background-color: white !important;
+    border-style: none !important;
+    box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.25);
+}
+
+/* Dialog */
+.wooden-tablet-dialog  {
+    position: absolute;
+    z-index: 4;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    height: 180px;
+    background-image: url('../img/wooden-dialog.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Lilita One', cursive;
+}
+
+.guide {
+    background-image: url('../img/human-guide.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
