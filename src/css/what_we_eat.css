@@ -1,0 +1,79 @@
+.custom-background{
+    background-color: #d9f1ff;
+}
+#map {
+    z-index: 1;
+    height: 100vh;    /* The height is 400 pixels */
+    width: 100vw;    /* The width is the width of the web page */
+    background-color: #aad3df;
+  }
+  
+.flex-header {
+    z-index: 2;
+    position: fixed;
+    text-align: center;
+    height: auto;
+    width: calc(100vw - 10vw);
+    margin: 0 5vw;
+    padding-top: 10px;
+}
+  
+#wooden-tablet-header {
+    z-index: 1;
+    position: relative;
+    height: 15vh;
+    min-height: 100px;
+}
+  
+.flex-header-menu {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: relative;
+    align-items: center;
+    top: -50px;
+    margin: 0 10vw;
+}
+  
+.nav-link {
+  
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+.context{
+    padding-top:30px;
+    font-weight: bold;
+}
+.btn{
+    background-color: white !important;
+    color: black !important;
+}
+
+.background_img{
+    position: relative;
+    padding-top: 100px;
+    padding-left: 60px;
+  }
+  
+.background_chat {
+    height: 315px;
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Vertically center content */
+    position: relative;
+}
+.chat_icon{
+    height: 100%;
+}
+.content-container{
+    padding-left: 20px;
+}
+.row.background_chat{
+    z-index: 999;
+    position: absolute;
+}
+
+.context{
+    padding-top:30px;
+    font-weight: bold;
+}
