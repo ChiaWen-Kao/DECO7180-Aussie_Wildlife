@@ -1,0 +1,48 @@
+/*
+    Wooden tablet Header
+*/
+.wooden-tablet-header {
+    color: white;
+    font-size: x-large;
+    height: fit-content;
+    font-family: 'Lilita One', cursive;
+    position: relative;
+    z-index: 4;
+    top: 10px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    text-decoration: none !important;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+/*
+    closet: color palette
+*/
+.closet-color {
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 50%;
+    border-style: none;
+}
+
+.closet-color:focus, .closet-color:active {
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+}
+
+.closet-accessory {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+}
+
+.closet-accessory:focus, .closet-accessory:active {
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+}

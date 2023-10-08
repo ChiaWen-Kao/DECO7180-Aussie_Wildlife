@@ -136,14 +136,13 @@ function getMostOccurence(dataArray, state) {
 // Mark the position on the map with flag
 function marker(maxKey, state) {
     var flagIcon = L.icon({
-        iconUrl: "img/flag.png",
+        iconUrl: "img/icon/flag.png",
         iconSize:     [40, 40], // size of the icon
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
     const latLongArray = maxKey.split(",");
-    console.log(`lat: ${latLongArray[0]}    long: ${latLongArray[1]}`)
 
     var marker = L.marker([latLongArray[0], latLongArray[1]], {icon: flagIcon}).addTo(map);
     marker.on("click", function(e) {
