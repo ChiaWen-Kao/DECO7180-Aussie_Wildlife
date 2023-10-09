@@ -3,7 +3,9 @@ const changeImageButton = document.getElementById('changeImageButton');
 const apiImage = document.getElementById('Image_switch');
 let imageUrls = []; // Array to store all image URLs
 let currentImageIndex = 0; // Index of the current image to be displayed
+
 let currentUtterance = null; // Track the currently speaking utterance
+
 const contentArray = [
     "Fun fact 1: Grey kangaroo is the most common kangaroo in Queensland. Their habitats spread across the state but mostly along the east coast",
     "Grey kangaroos are grazers, which means they mostly eat grass. Other types of kangaroos, however, might eat a variety of plants.",
