@@ -4,6 +4,8 @@ const apiImage = document.getElementById('Image_switch');
 let imageUrls = []; // Array to store all image URLs
 let currentImageIndex = 0; // Index of the current image to be displayed
 
+let currentUtterance = null; // Track the currently speaking utterance
+
 const contentArray = [
     "Fun fact 1: Grey kangaroo is the most common kangaroo in Queensland. Their habitats spread across the state but mostly along the east coast",
     "Grey kangaroos are grazers, which means they mostly eat grass. Other types of kangaroos, however, might eat a variety of plants.",
@@ -18,19 +20,43 @@ const contentArray = [
 //   const contextElement = document.querySelector('.context');
   const contextElement = document.getElementById("text");
   let currentContentIndex = 0;
+//----------------------------------------------------------------------------------------------
+//using [SpeechSynthesisUtterance] interface of the [Web Speech API]
 
-  // Add a click event listener to the button
-  changeImageButton.addEventListener('click', function () {
-    // Increment the content index and loop back to 0 if it exceeds the array length
-    currentContentIndex = (currentContentIndex + 1) % contentArray.length;
 
-    // Update the content based on the new index
-    contextElement.textContent = contentArray[currentContentIndex];
-  });
+function speakContent(text) {
+    let utterance = new SpeechSynthesisUtterance();
+    utterance.text = text;
+    utterance.pitch = 1.2;
+    utterance.rate = 0.8;
+    let voices = window.speechSynthesis.getVoices();
+    let selectedVoice = voices.find(voice => voice.name === "Google UK English Male");
+    
+    if (selectedVoice) {
+        utterance.voice = selectedVoice;
+    } else {
+        utterance.voice = voices[0];
+    }
+    
+    currentUtterance = utterance; // Update the currently speaking utterance
+    window.speechSynthesis.speak(utterance);
+}
+
+//----------------------------------------------------------------------------------------------
 
 // Add a click event listener to the button
 changeImageButton.addEventListener('click', function () {
-    // Call fetchData to fetch a new image from the API
+    currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+    contextElement.textContent = contentArray[currentContentIndex];
+
+    // Stop the current utterance (if any)
+    if (currentUtterance) {
+        window.speechSynthesis.cancel(currentUtterance);
+    }
+
+    // Create and speak the new utterance
+    speakContent(contextElement.textContent);
+
     updateImage();
 });
 
@@ -53,43 +79,6 @@ function updateImage() {
         currentImageIndex++;
     }
 }
-
-// Get the text area and speak button elements
-let speakButton = document.getElementById("changeImageButton");
-
-
-// Add an event listener to the speak button
-speakButton.addEventListener("click", function () {
-    // Get the text from the text area or the <p> element
-    let text = contextElement.textContent;
-
-    // Create a new SpeechSynthesisUtterance object
-    let utterance = new SpeechSynthesisUtterance();
-
-    // Set the text
-    utterance.text = text;
-
-    // Set the pitch (adjust this value as needed)
-    utterance.pitch = 1.2; // Higher value for a higher-pitched voice, lower for deeper
-    utterance.rate = 0.8;
-    // Get the available voices
-    let voices = window.speechSynthesis.getVoices();
-
-    // Find a voice by name (Change this to match an available voice in your environment)
-    let selectedVoice = voices.find(voice => voice.name === "Google UK English Female");
-
-    // If the selected voice is found, set it as the voice for the utterance
-    if (selectedVoice) {
-        utterance.voice = selectedVoice;
-    } else {
-        // If the selected voice is not available, use the default voice
-        utterance.voice = voices[0];
-    }
-
-    // Speak the utterance
-    window.speechSynthesis.speak(utterance);
-});
-
 
 // Define the API URL
 //q=taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=occurrence_decade_i%3A%222020%22&fq=state%3A%22New%20South%20Wales%22&fq=species_group%3A%22Mammals%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr19123%22&fq=month%3A%228%22&qc=-_nest_parent_%3A*

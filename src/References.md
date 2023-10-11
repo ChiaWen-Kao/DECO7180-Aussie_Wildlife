@@ -11,3 +11,8 @@ A. Quiz
 [7]Oyunmedeg, O. (2018, August 05). Morning Dew. unsplash. https://unsplash.com/photos/LmyPLbbUWhA
 [8]Hansen, C. (2020, October 12). Lamb Chops. unsplash. https://unsplash.com/photos/cvj-7TZjvA0
 [9]Feller, B. (2018, August 8). Giant Grasshopper. unsplash. https://unsplash.com/photos/_sFfGu4cGvc
+
+
+
+Speech web API
+[1] Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
