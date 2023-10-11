@@ -27,7 +27,7 @@ function speakContent(text) {
     utterance.pitch = 1.2;
     utterance.rate = 0.8;
     let voices = window.speechSynthesis.getVoices();
-    let selectedVoice = voices.find(voice => voice.name === "Google UK English Female");
+    let selectedVoice = voices.find(voice => voice.name === "Google UK English Male");
     
     if (selectedVoice) {
         utterance.voice = selectedVoice;
