@@ -15,8 +15,10 @@
     background-repeat:no-repeat;
 }
 
-.nav-links {
+a {
     padding: 20px 0;
+    color: white;
+    text-decoration: none !important;
 }
 
 /* Background */

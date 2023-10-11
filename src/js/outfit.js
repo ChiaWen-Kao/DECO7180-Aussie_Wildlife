@@ -1,6 +1,7 @@
 /*
     display animal guide
 */
+
 var animalGuideColor = "orange";
 var animalGuideAccessory = "";
 
@@ -11,6 +12,8 @@ function displayAnimalGuide(color, accessory) {
     animalGuideContainer.innerHTML = ``;
     const animalGuide = document.createElement("img");
 
+    animalGuide.style.height = "350px";
+    animalGuide.setAttribute("id", "animalGuide-image")
     animalGuide.setAttribute("src", appearances[dressCode][1]);
     animalGuideContainer.appendChild(animalGuide);
 }
@@ -107,6 +110,17 @@ function displayAccessory() {
     }
 }
 
+function startJourney() {
+    let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
+    alert(guideImage)
+    window.location.href = `General_info.html?guideImage=${encodeURIComponent(guideImage)}`;
+}
+
+
 /* main flow */
-displayAnimalGuide(animalGuideColor, animalGuideAccessory);
-displayColor();
+$(document).ready(function() {
+    if (window.location.href.includes("outfit.html")) {
+        displayAnimalGuide(animalGuideColor, animalGuideAccessory);
+        displayColor();
+    }
+});

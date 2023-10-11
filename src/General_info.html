@@ -42,20 +42,20 @@
 
             </div>
             <div class="col-3">
-                <div class="row justify-content-md-center">
-                    <a href="what_we_eat.html" class="btn btn-outline-light">
+                <div class="row justify-content-md-center" onclick="next('diet')">
+                    <a href="#" class="btn btn-outline-light">
                         <img src="img/vegetable 1.svg" alt="Icon" style="width: 30px; height: 30px; margin-right: 10px;">What we eat
                     </a>
                 </div>
                 <br>
-                <div class="row justify-content-md-center">
-                    <a href="what_we_evolve.html" class="btn btn-outline-light">
+                <div class="row justify-content-md-center" onclick="next('evolve')">
+                    <a href="#" class="btn btn-outline-light">
                         <img src="img/evolution 1.svg" alt="Icon" style="width: 30px; height: 30px; margin-right: 10px;">What we evolve
                     </a>
                 </div>
                 <br>
-                <div class="row justify-content-md-center">
-                    <a href="map.html" class="btn btn-outline-light">
+                <div class="row justify-content-md-center" onclick="next('map')">
+                    <a href="#" class="btn btn-outline-light">
                         <img src="img/map 1.svg" alt="Icon" style="width: 30px; height: 30px; margin-right: 10px;">Where we live
                     </a>
                 </div>
@@ -66,7 +66,7 @@
 
 
         </div>
-        <div class="row background_chat">
+        <!-- <div class="row background_chat">
             <div class="col-4">
                 <img class="chat_icon" alt="" src="img/Kangaroo.svg" width="300px" />
             </div>
@@ -78,9 +78,20 @@
 
             </div>
         </div>
-        <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%">
+        <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%"> -->
 
+        
     </div>
+    
+    <!-- Dialog -->
+    <section id="dialog" class="mt-5">
+        <div class="container p-2 wooden-tablet-dialog">
+            <div class="row h-100">
+                <div class="col-sm-3 guide" id="guide"></div>
+                <div class="col-sm-8 pt-5 pb-5 fs-4" id="text">Welcome to our tour. My name is Roo. I’m very happy to take you around. </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -89,4 +100,6 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/dialog-charactor.js"></script>
 </html>

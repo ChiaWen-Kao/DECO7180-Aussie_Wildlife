@@ -15,7 +15,8 @@ const contentArray = [
   ];
 
   
-  const contextElement = document.querySelector('.context');
+//   const contextElement = document.querySelector('.context');
+  const contextElement = document.getElementById("text");
   let currentContentIndex = 0;
 
   // Add a click event listener to the button
@@ -30,8 +31,6 @@ const contentArray = [
 // Add a click event listener to the button
 changeImageButton.addEventListener('click', function () {
     // Call fetchData to fetch a new image from the API
-    // console.log('Button clicked');
-    // console.log(apiImage);
     updateImage();
 });
 
@@ -109,8 +108,6 @@ function fetchData() {
     for (const key in queryParams) {
         fullUrl.searchParams.append(key, queryParams[key]);
     }
-    // console.log('213')
-    // console.log(fullUrl.toString());
     
     // Make a GET request to the API
     fetch(fullUrl)
@@ -143,21 +140,8 @@ function fetchData() {
             if (occurrences.length === queryParams.pageSize) {
                 fetchData();
             } else {
-                // getLongtitude();
             }
     })
 }
 
 fetchData();
-
-
-// function getLongtitude() {
-//     console.log(longtitudeDict)
-//     for (const key in longtitudeDict) {
-//         const latLongArray = key.split(",");
-//         const value = longtitudeDict[key];
-//         if (value > 30) {
-//             marker(latLongArray)
-//         }
-//     }
-// }

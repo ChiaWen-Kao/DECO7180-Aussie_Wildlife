@@ -92,3 +92,29 @@
 .description_img {
     display: none;
 } */
+
+/* Dialog */
+.wooden-tablet-dialog  {
+  position: absolute;
+  z-index: 4;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  height: 180px;
+  background-image: url('../img/wooden-dialog.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Lilita One', cursive;
+}
+
+.guide {
+  background-image: url('../img/human-guide.svg');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.animal-theme-btn:disabled {
+  background-color: rgb(0, 0, 0, 0.3) !important;
+}
