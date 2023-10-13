@@ -110,11 +110,10 @@ function displayAccessory() {
     }
 }
 
-function startJourney() {
-    let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
-    alert(guideImage)
-    window.location.href = `General_info.html?guideImage=${encodeURIComponent(guideImage)}`;
-}
+// function startJourney() {
+//     let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
+//     window.location.href = `General_info.html?guideImage=${encodeURIComponent(guideImage)}`;
+// }
 
 
 /* main flow */

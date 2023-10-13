@@ -18,7 +18,7 @@
       <img id="wooden-tablet-header" src="img/wooden-tablet-header.png" />
       <header class="flex-header-menu header-menu" aria-label="Main Menu">
         <div class="header-links">
-          <a href="#" class="nav-link" aria-label="Home" tab-index="0">Zoo</a>
+          <a href="#" class="nav-link" aria-label="Home" tab-index="0" onclick="history.back()">Map</a>
         </div>
         <div>
           <a href="#" class="nav-link" aria-label="Quiz Time" tab-index="0">Quiz Time</a>
@@ -53,7 +53,7 @@
 
       </div>
     </div>
-
+<!-- 
     <div class="row background_chat">
       <div class="col-4">
         <img class="chat_icon" alt="" src="img/Kangaroo.svg" width="300px" />
@@ -67,7 +67,16 @@
 
       </div>
     </div>
-    <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%">
+    <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%"> -->
+    <!-- Dialog -->
+    <section id="dialog" class="mt-5">
+      <div class="container p-2 wooden-tablet-dialog">
+          <div class="row h-100">
+              <div class="col-sm-3 guide" id="guide"></div>
+              <div class="col-sm-8 pt-5 pb-5 fs-4" id="text">Fun fact 1: Grey kangaroo is the most common kangaroo in Queensland. Their habitats spread across the state but mostly along the east coast</div>
+          </div>
+      </div>
+  </section>
 
   </div>
 
@@ -76,5 +85,8 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/dialog-charactor.js"></script>
 
 </html>

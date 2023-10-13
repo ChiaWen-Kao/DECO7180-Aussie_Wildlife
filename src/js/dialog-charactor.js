@@ -1,16 +1,15 @@
 // Pass parameters via url
 function startJourney() {
-  let guideImage = document.getElementsByClassName("guide").style;
-  alert(guideImage)
-  window.location.href = `General_info.html?guideImage=${encodeURIComponent(guideImage)}`;
+  let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
+  alert(`url("${guideImage}")`);
+  window.location.href = `General_info.html?guideImage=${encodeURIComponent(`url("${guideImage}")`)}`;
 }
 
 function next(url) {
-  const guideImage = document.getElementById("guide").style.backgroundImage;
+  let guideImage = document.querySelector(".guide").style.backgroundImage;
   if (url == "diet") {
       window.location.href = `what_we_eat.html?guideImage=${encodeURIComponent(guideImage)}`;
   } else if (url == "evolve") {
-      console.log("jworgijweg")
       window.location.href = `what_we_evolve.html?guideImage=${encodeURIComponent(guideImage)}`;
   } else if (url == "map") {
       window.location.href = `map.html?guideImage=${encodeURIComponent(guideImage)}`;
@@ -38,6 +37,6 @@ function displaydialogAnimalGuide(url) {
   if (animalGuide != null) {
     animalGuide.style.backgroundImage = url;
   } else {
-    animalGuide.style.background = url("img/closet/human-guide.svg")
+    animalGuide.style.backgroundImage = url("img/closet/human-guide.svg")
   }
 }
