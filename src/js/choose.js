@@ -1,4 +1,3 @@
-let currentImageIndex = 0; // Index of the current image to be displayed
 
 let currentUtterance = null; // Track the currently speaking utterance
 
