@@ -4,6 +4,7 @@
   color: white;
   font-size: x-large;
   height: fit-content;
+  align-self: center;
 }
 
 .wooden-tablet-header {
@@ -15,16 +16,9 @@
   background-repeat:no-repeat;
 }
 
-a {
-  padding: 40px 0;
-  color: white;
-  text-decoration: none !important;
-}
-
 .logo {
   padding: 10px 0;
   font-size: 2.5rem;
-  color: white;
 }
 
 
@@ -36,20 +30,49 @@ a {
   right: 0;
   left: 0;
   height: 180px;
+  /*
+      Image by brgfx</a> on Freepik
+      https://www.freepik.com/free-vector/set-wooden-sign-banner_24460942.htm#query=wooden%20tablet&position=29&from_view=search&track=ais#position=29&query=wooden%20tablet
+  */
   background-image: url('../img/wooden-dialog.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  color: black;
   font-family: 'Lilita One', cursive;
 }
 
 .guide {
+  /*
+      Image by Freepik
+      https://www.freepik.com/free-vector/hand-drawn-flat-design-scavenger-hunt-illustration_22759268.htm#query=tour%20guide&position=21&from_view=search&track=ais
+  */
   background-image: url('../img/human-guide.svg');
   background-size: 80%;
   background-repeat: no-repeat;
   background-position-x: center;
+  overflow: hidden;
 }
 
-.animal-theme-btn:disabled {
-  background-color: rgb(0, 0, 0, 0.3) !important;
+.next {
+  /* Icon by icons8.com */
+  background-image: url("https://img.icons8.com/matisse/0/E6C594/next.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position-x: 30%;
+  background-position-y: 90%;
+}
+
+.next {
+  border-style: none !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 20;
+  font-family: 'Lilita One', cursive;
 }

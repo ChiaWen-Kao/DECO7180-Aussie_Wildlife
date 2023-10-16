@@ -3,6 +3,43 @@ blackMask();
 var i = 0
 displayDialog(1);
 
+let currentImageIndex = 0; // Index of the current image to be displayed
+
+let currentUtterance = null; // Track the currently speaking utterance
+function speakContent(text) {
+    let utterance = new SpeechSynthesisUtterance();
+    utterance.text = text;
+    utterance.pitch = 1.2;
+    utterance.rate = 0.8;
+    let voices = window.speechSynthesis.getVoices();
+    let selectedVoice = voices.find(voice => voice.name === "Google UK English Male");
+    
+    if (selectedVoice) {
+        utterance.voice = selectedVoice;
+    } else {
+        utterance.voice = voices[0];
+    }
+    
+    currentUtterance = utterance; // Update the currently speaking utterance
+    window.speechSynthesis.speak(utterance);
+}
+
+//----------------------------------------------------------------------------------------------
+
+const contextElement = document.getElementById('text');
+let currentContentIndex = 0;
+
+
+const playSoundsButton = document.getElementById('next');
+
+playSoundsButton.addEventListener('click', function () {
+    // Get the content from the .context element
+    const contextText = contextElement.textContent;
+
+    // Speak the content
+    speakContent(contextText);
+});
+
 
 /*
     hint for users (black mask)
@@ -109,7 +146,7 @@ function displayCurrentQuestion() {
     var currentOptionTexts = optionTextLists["option" + (currentQuestionIndex + 1) + "Text"];
     
     const question = document.createElement("p");
-    question.classList.add("fs-2", "text-center", "mt-5", "mb-5");
+    question.classList.add("fs-2", "text-center", "mb-4");
     question.innerHTML = `
         ${currentQuestion[0]}
     `;
@@ -123,7 +160,7 @@ function displayCurrentQuestion() {
         
         optionCard.innerHTML = `
             <div class="card btn btn-outline-success me-2" id="answer${i}" style="width: 18rem;">
-                <img src="${currentOptionImgs[i]}" class="card-img-top">
+                <img src="${currentOptionImgs[i]}" class="card-img-top" style="height: 200px;">
                 <div class="card-body">
                     <p class="card-text">${currentOptionTexts[i]}</p>
                 </div>

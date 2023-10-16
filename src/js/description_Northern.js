@@ -7,16 +7,16 @@ let currentImageIndex = 0; // Index of the current image to be displayed
 let currentUtterance = null; // Track the currently speaking utterance
 
 const contentArray = [
-    "Fun fact 1: Grey kangaroo is the most common kangaroo in Queensland. Their habitats spread across the state but mostly along the east coast",
-    "Grey kangaroos are grazers, which means they mostly eat grass. Other types of kangaroos, however, might eat a variety of plants.",
-    "The best places to spot kangaroos in Queensland are along the coasts such as Cape Hillsborough National Park, Magnetic Island. \
-    If you get there by dusk or dawn, chances are you will encounter heaps of them.",
-    "Queensland is a sunshine state and the summer can be boiling hot. Our kangaroo families here relax under the shades during midday to avoid intensive sunlight.",
-    "Another technique to cool down is licking their forearms. The cooling effect from saliva evaporation will help release some heat from their body."
+    "A majority of the northern territory is covered with deserts. But our kangaroo families here also adapt astonishingly to the environment.",
+    "We have our own cooling system to cope with the heat. Some of us developed an ability to tolerate dehydration for a long time.",
+    "Another trick to get cool down is licking our forearms. The saliva's evaporation helps us reduce body temperature. But it's for kangaroos only, you should never try that.",
+    "Northern territory provides habitats for a large population of red kangaroos. Red kangaroos are the largest marsupial, they can grow to 2 meters tall.",
+    "Red kangaroos can adapt to any hostile environment with very little water, just except the driest deserts."
     // Add more content as needed
 ];
 
-
+const contextElement = document.getElementById("text");
+  let currentContentIndex = 0;
 //----------------------------------------------------------------------------------------------
 //using [SpeechSynthesisUtterance] interface of the [Web Speech API]
 
@@ -29,13 +29,11 @@ function speakContent(text) {
     let voices = window.speechSynthesis.getVoices();
     let selectedVoice = voices.find(voice => voice.name === "Google UK English Male");
     
-    utterance.voice= selectedVoice;
-    // if (selectedVoice) {
-    //     utterance.voice = selectedVoice;
-    // } else {
-    //     // utterance.voice = voices[0];
-    //     console.log('123')
-    // }
+    if (selectedVoice) {
+        utterance.voice = selectedVoice;
+    } else {
+        utterance.voice = voices[0];
+    }
     
     currentUtterance = utterance; // Update the currently speaking utterance
     window.speechSynthesis.speak(utterance);
@@ -43,23 +41,48 @@ function speakContent(text) {
 
 //----------------------------------------------------------------------------------------------
 
-const contextElement = document.querySelector('.context');
-let currentContentIndex = 0;
-
 // Add a click event listener to the button
-changeImageButton.addEventListener('click', function () {
-    currentContentIndex = (currentContentIndex + 1) % contentArray.length;
-    contextElement.textContent = contentArray[currentContentIndex];
+// changeImageButton.addEventListener('click', function () {
+//     currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+//     contextElement.textContent = contentArray[currentContentIndex];
 
-    // Stop the current utterance (if any)
-    if (currentUtterance) {
-        window.speechSynthesis.cancel(currentUtterance);
+//     // Stop the current utterance (if any)
+//     if (currentUtterance) {
+//         window.speechSynthesis.cancel(currentUtterance);
+//     }
+
+//     // Create and speak the new utterance
+//     speakContent(contextElement.textContent);
+
+//     updateImage();
+// });
+
+const playSoundsButton = document.getElementById('next');
+
+playSoundsButton.addEventListener('click', function () {
+    // Get the content from the .context element
+    const contextText = contextElement.textContent;
+
+    // Speak the content
+    speakContent(contextText);
+
+    // Change image
+    if (currentContentIndex != 0) {
+        currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+        contextElement.textContent = contentArray[currentContentIndex];
+    
+        // Stop the current utterance (if any)
+        if (currentUtterance) {
+            window.speechSynthesis.cancel(currentUtterance);
+        }
+    
+        // Create and speak the new utterance
+        speakContent(contextElement.textContent);
+    
+        updateImage();
+    } else {
+        currentContentIndex ++;
     }
-
-    // Create and speak the new utterance
-    speakContent(contextElement.textContent);
-
-    updateImage();
 });
 
 function updateImage() {
@@ -81,7 +104,6 @@ function updateImage() {
         currentImageIndex++;
     }
 }
-
 
 
 // Define the API URL
