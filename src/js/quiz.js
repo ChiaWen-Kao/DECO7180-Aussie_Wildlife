@@ -26,7 +26,7 @@ function speakContent(text) {
 
 //----------------------------------------------------------------------------------------------
 
-const contextElement = document.querySelector('.context');
+const contextElement = document.getElementById('text');
 let currentContentIndex = 0;
 
 
@@ -146,7 +146,7 @@ function displayCurrentQuestion() {
     var currentOptionTexts = optionTextLists["option" + (currentQuestionIndex + 1) + "Text"];
     
     const question = document.createElement("p");
-    question.classList.add("fs-2", "text-center", "mt-5", "mb-5");
+    question.classList.add("fs-2", "text-center", "mb-4");
     question.innerHTML = `
         ${currentQuestion[0]}
     `;
@@ -160,7 +160,7 @@ function displayCurrentQuestion() {
         
         optionCard.innerHTML = `
             <div class="card btn btn-outline-success me-2" id="answer${i}" style="width: 18rem;">
-                <img src="${currentOptionImgs[i]}" class="card-img-top">
+                <img src="${currentOptionImgs[i]}" class="card-img-top" style="height: 200px;">
                 <div class="card-body">
                     <p class="card-text">${currentOptionTexts[i]}</p>
                 </div>

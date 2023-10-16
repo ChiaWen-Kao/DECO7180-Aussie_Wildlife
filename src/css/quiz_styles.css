@@ -1,33 +1,26 @@
-body {
-    background-color: azure;
-}
-
-.header {
-    font-family: 'Lilita One', cursive;
-    color: white;
-    font-size: x-large;
-    height: fit-content;
-}
-
-/* Wooden Tablet Header */
-.wooden-tablet-header {
-    position: relative;
-    z-index: 4;
-    top: 10px;
-    background-position: center center;
+/* Background */
+.background {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* 
+        Image by macrovector on Freepik
+        https://www.freepik.com/free-vector/cartoon-plain-landscape-with-cute-happy-little-kangaroo-holding-green-twig-vector-illustration_35861671.htm#query=wildlife%20background%20aussie&position=23&from_view=search&track=ais
+    */
+    background-image: url('../img/kangaroo-background.svg');
+    background-repeat: no-repeat;
     background-size: cover;
-    background-repeat:no-repeat;
-}
-
-.nav-links {
-    padding: 20px 0;
+    overflow-x: hidden;
+    opacity: 0.4;
 }
 
 .quiz {
     position: relative;
-    top: 50%;
-    bottom: 50%;
+    z-index: 10;
     font-family: 'Lilita One', cursive;
+    margin-top: 0;
 }
 
 /* Black Mask */
@@ -39,37 +32,4 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.6);
-}
-
-/* Dialog */
-.wooden-tablet-dialog  {
-    position: absolute;
-    z-index: 4;
-    bottom: 10px;
-    right: 0;
-    left: 0;
-    height: 180px;
-    background-image: url('../img/wooden-dialog.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    font-family: 'Lilita One', cursive;
-}
-
-.guide {
-    background-image: url('../img/Kangaroo.svg');
-    background-size: 80%;
-    background-repeat: no-repeat;
-}
-
-.next {
-    background-image: url("https://img.icons8.com/matisse/0/E6C594/next.png");
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position-x: 30%;
-    background-position-y: 90%;
-}
-
-.next {
-    border-style: none !important;
 }
