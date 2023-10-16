@@ -20,6 +20,11 @@ function displayAnimalGuide(color, accessory) {
 /*
     display closet    
 */
+
+/*
+    Image by macrovector on Freepik
+    https://www.freepik.com/free-vector/cartoon-set-with-cute-funny-kangaroo-character-different-situations-isolated-against-blank-background-vector-illustration_26762725.htm#query=kangaroo&position=29&from_view=search&track=sph
+*/
 const colors = {
   red: ["red", "img/closet/Kangaroo_red.svg"],
   grey: ["grey","img/closet/Kangaroo_grey.svg"],
@@ -27,8 +32,17 @@ const colors = {
   orange: ["orange", "img/closet/Kangaroo_orange.svg"]
 }
 
+
 const accessories = {
+  /*
+    Image by katemangostar on Freepik
+    https://www.freepik.com/free-vector/accessories-shoes-icon-set_1488129.htm#query=earring&position=0&from_view=search&track=sph
+  */
   earring: ["earring", "img/closet/earring.svg"],
+  /*
+    Image by pch.vector</a> on Freepik
+    https://www.freepik.com/free-vector/different-kinds-bags-women-vector-illustrations-set-casual-colorful-handbags-different-shapes-summer-autumn-isolated-white-background-fashion-accessories-concept_29119125.htm#query=purse&position=0&from_view=search&track=sph
+  */
   purse: ["purse", "img/closet/purse.svg"]
 };
 

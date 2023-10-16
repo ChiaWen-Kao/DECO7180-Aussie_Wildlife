@@ -65,3 +65,7 @@
 .next {
   border-style: none !important;
 }
+
+body {
+  overflow: hidden;
+}
