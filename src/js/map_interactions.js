@@ -215,7 +215,6 @@ function onMarkClick(e, state) {
         window.location.href = `description_Northern.html?guideImage=${encodeURIComponent(guideImage)}`;
     } else if (state == "new south wales") {
         window.location.href = `description_NSW.html?guideImage=${encodeURIComponent(guideImage)}`;
-        
     }
 }
 
