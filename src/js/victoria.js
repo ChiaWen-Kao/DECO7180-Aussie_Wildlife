@@ -8,8 +8,7 @@ let currentUtterance = null; // Track the currently speaking utterance
 
 const contentArray = [
     "Great Ocean Road is the most stunning area for kangaroo spotting.",
-    "Victoria landscape is attractive to small Eastern Grey kangaroos who are shy and retiring. What should we do when we see them? \
-    Let’s just watch them from a distance and give them some privacy.",
+    "Victoria landscape is attractive to small Eastern Grey kangaroos who are shy and retiring. We should watch them from a distance and give them some privacy.",
     "While Victoria is much colder than some other states, the kangaroos here adapt to the weather astonishingly.",
     "Do you know the secrets to withstand the cold? They keep hopping around to facilitate blood flows and increase body temperature.",
     "Unlike some other animals, kangaroos do not develop hibernation mechanisms. That’s why they can tolerate the cold but not extremely freezing winters."
@@ -18,7 +17,8 @@ const contentArray = [
 
   //----------------------------------------------------------------------------------------------
 //using [SpeechSynthesisUtterance] interface of the [Web Speech API]
-
+const contextElement = document.querySelector('.context');
+let currentContentIndex = 0;
 
 function speakContent(text) {
     let utterance = new SpeechSynthesisUtterance();
@@ -39,25 +39,24 @@ function speakContent(text) {
 }
 
 //----------------------------------------------------------------------------------------------
-  const contextElement = document.querySelector('.context');
-  let currentContentIndex = 0;
+
   
   
   // Add a click event listener to the button
-changeImageButton.addEventListener('click', function () {
-    currentContentIndex = (currentContentIndex + 1) % contentArray.length;
-    contextElement.textContent = contentArray[currentContentIndex];
+// changeImageButton.addEventListener('click', function () {
+//     currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+//     contextElement.textContent = contentArray[currentContentIndex];
 
-    // Stop the current utterance (if any)
-    if (currentUtterance) {
-        window.speechSynthesis.cancel(currentUtterance);
-    }
+//     // Stop the current utterance (if any)
+//     if (currentUtterance) {
+//         window.speechSynthesis.cancel(currentUtterance);
+//     }
 
-    // Create and speak the new utterance
-    speakContent(contextElement.textContent);
+//     // Create and speak the new utterance
+//     speakContent(contextElement.textContent);
 
-    updateImage();
-});
+//     updateImage();
+// });
 
 const playSoundsButton = document.getElementById('next');
 
@@ -67,6 +66,24 @@ playSoundsButton.addEventListener('click', function () {
 
     // Speak the content
     speakContent(contextText);
+
+    // Change image
+    if (currentContentIndex != 0) {
+        currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+        contextElement.textContent = contentArray[currentContentIndex];
+    
+        // Stop the current utterance (if any)
+        if (currentUtterance) {
+            window.speechSynthesis.cancel(currentUtterance);
+        }
+    
+        // Create and speak the new utterance
+        speakContent(contextElement.textContent);
+    
+        updateImage();
+    } else {
+        currentContentIndex ++;
+    }
 });
 
 function updateImage() {
@@ -107,8 +124,6 @@ function fetchData() {
     for (const key in queryParams) {
         fullUrl.searchParams.append(key, queryParams[key]);
     }
-    // console.log('213')
-    // console.log(fullUrl.toString());
     
     // Make a GET request to the API
     fetch(fullUrl)
@@ -141,21 +156,8 @@ function fetchData() {
             if (occurrences.length === queryParams.pageSize) {
                 fetchData();
             } else {
-                // getLongtitude();
             }
     })
 }
 
 fetchData();
-
-
-// function getLongtitude() {
-//     console.log(longtitudeDict)
-//     for (const key in longtitudeDict) {
-//         const latLongArray = key.split(",");
-//         const value = longtitudeDict[key];
-//         if (value > 30) {
-//             marker(latLongArray)
-//         }
-//     }
-// }

@@ -68,6 +68,7 @@ playSoundsButton.addEventListener('click', function () {
     // Speak the content
     speakContent(contextText);
 
+    // Change image
     if (currentContentIndex != 0) {
         currentContentIndex = (currentContentIndex + 1) % contentArray.length;
         contextElement.textContent = contentArray[currentContentIndex];
