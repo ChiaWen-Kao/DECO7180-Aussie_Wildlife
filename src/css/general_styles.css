@@ -54,6 +54,13 @@ html, body {
     font-size: 20px !important;
     font-weight: bold !important;
 }
+
+.logo {
+    font-size: x-large;
+    border-style: solid;
+    border-color: black;
+}
+
 .container {
     position: relative;
     height: 100%; /* Make container fill the viewport height */
