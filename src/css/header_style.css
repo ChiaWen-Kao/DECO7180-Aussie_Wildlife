@@ -1,0 +1,89 @@
+/* Header Style*/
+.navbar {
+    position: relative;
+    z-index: 1 !important;
+    display: flex;
+    margin-top: 1vh;
+    justify-content: center;    /* horizontal center */
+    align-items: center;    /* vertical center */
+}
+
+.wooden-tablet-header {
+    width: 100%;    /* according to the window size */
+}
+
+.navbar-links {
+    position: absolute;    /* according to the paranet container (navbar) */
+    align-items: center;    /* text vertical center */
+    padding: 0 50px;
+    width: 100%;    /* average width of each link */
+    font-family: 'Lilita One', cursive;
+    font-size: 1.5em;
+    color: white;
+}
+
+.point-display {
+    margin: 5px;
+    padding: 6px 10px;    /* Inner margin of point display */
+    align-items: center;    /* text vertical center */
+    border-radius: 30px;
+    background: rgba(175, 102, 61, 0.60);
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.point-display > img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5vw;
+}
+
+/* Map */
+#map {
+    position: absolute;
+    z-index: 0 !important;
+    top: 0;    /* push the map below the navbar */
+    width: 100%;
+    height: 100vh;
+}
+
+/* Dialog */
+.dialog {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1 !important;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.wooden-tablet-dialog {
+    position: absolute;
+    bottom: 2vh;
+    width: 100%;
+}
+
+.dialog-content {
+    position: absolute;    /* according to the paranet container (navbar) */
+    padding: 2vh 30px;
+    bottom: 2vh;
+    width: 100%;
+    font-family: 'Lilita One', cursive;
+    font-size: 1.5em;
+    color: black;
+}
+
+.col-sm-3 > img {
+    width: 100%;    /* average width of each link */
+    bottom: 0;
+}
+
+.dialog-text {
+    width: 100%;
+    text-align: left;    /* text horizontal left */
+}
+
+.col-sm-1 > img {
+    width: 100%;
+    text-align: right;    /* horizontal center */
+}

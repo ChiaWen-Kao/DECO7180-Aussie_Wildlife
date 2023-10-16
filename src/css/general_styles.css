@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.flex-container {
+    z-index: 0;
+    display: flex;
+    flex-direction: column;    /* Vertical layout */
+}
+
+#map {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #aad3df;
+}
+.flex-header {
+    z-index: 2;
+    position: fixed;
+    text-align: center;
+    height: auto;
+    width: calc(100vw - 10vw);
+    margin: 0 5vw;
+    padding-top: 10px;
+}
+
+/* Header */
+#wooden-tablet-header {
+    z-index: 2;
+    position: relative;
+    height: 15vh;
+    min-height: 100px;
+}
+
+.flex-header-menu {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: relative;
+    align-items: center;
+    top: -50px;
+    margin: 0 10vw;
+}
+
+.nav-link {
+    
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+.logo {
+    font-size: x-large;
+    border-style: solid;
+    border-color: black;
+}
+
+.container {
+    position: relative;
+    height: 100%; /* Make container fill the viewport height */
+}
+
+/* Dialog */
+.wooden-tablet-dialog  {
+    position: absolute;
+    z-index: 4;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    height: 180px;
+    background-image: url('../img/wooden-dialog.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Lilita One', cursive;
+}
+
+.guide {
+    background-image: url('../img/human-guide.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.animal-theme-btn:disabled {
+    background-color: rgb(0, 0, 0, 0.3) !important;
+}

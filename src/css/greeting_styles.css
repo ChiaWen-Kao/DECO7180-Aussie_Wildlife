@@ -1,0 +1,41 @@
+/* Background */
+.background {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* 
+        Image by macrovector on Freepik
+        https://www.freepik.com/free-vector/cartoon-plain-landscape-with-cute-happy-little-kangaroo-holding-green-twig-vector-illustration_35861671.htm#query=wildlife%20background%20aussie&position=23&from_view=search&track=ais
+    */
+    background-image: url('../img/kangaroo-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
+.human-guide {
+    /*
+        Image by Freepik
+        https://www.freepik.com/free-vector/hand-drawn-flat-design-scavenger-hunt-illustration_22759268.htm#query=tour%20guide&position=21&from_view=search&track=ais
+    */
+    background-image: url('../img/human-guide.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p {
+    font-family: 'Lilita One', cursive;
+    font-size: 40px;
+}
+
+#next:hover {
+    height: 60px;
+}
