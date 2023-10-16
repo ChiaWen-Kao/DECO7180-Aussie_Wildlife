@@ -16,7 +16,6 @@ const contentArray = [
   ];
 
   
-//   const contextElement = document.querySelector('.context');
   const contextElement = document.getElementById("text");
   let currentContentIndex = 0;
 //----------------------------------------------------------------------------------------------

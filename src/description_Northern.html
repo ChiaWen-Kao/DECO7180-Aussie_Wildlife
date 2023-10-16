@@ -4,93 +4,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/general_description.css" />
-  <link rel="stylesheet" href="css/quiz_styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <title>Document</title>
+  <!-- Import CSS-->
+  <link rel="stylesheet" href="css/site_styles.css" />
+  <link rel="stylesheet" href="css/general_description.css" />
+
+  <!-- Import Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- Import Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+  <title>Aussie Wildlife</title>
 
 </head>
 
-<body class="custom-background">
-  <div class="container text-center">
-    <div class="row">
-      <img id="wooden-tablet-header" src="img/wooden-tablet-header.png" />
-      <header class="flex-header-menu header-menu" aria-label="Main Menu">
-        <div class="header-links">
-          <a href="#" class="nav-link" aria-label="Home" tab-index="0" onclick="window.history()">Map</a>
+<body>
+    <!-- header -->
+    <div class="header">
+      <!--
+          Image by brgfx on Freepik
+          https://www.freepik.com/free-vector/different-templates-wooden-board-illustration_1142493.htm#query=wooden%20tablet&position=13&from_view=search&track=ais
+      -->
+        <div class="container wooden-tablet-header" style="background-image: url('img/wooden-tablet-header2.png');">
+            <div class="row mt-3 text-center nav-links h-100 align-items-center">
+                <div class="col">
+                    <a class="nav-link" href="map.html">Map</a>
+                </div>
+                <div class="col">
+                  <a class="nav-link" href="outfit.html">Outfit</a>
+                </div>
+                <div class="col-4 logo">Aussie Wildlife</div>
+                <div class="col">
+                    <a class="nav-link" href="quiz.html">Quiz</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link">Point</a>
+                </div>
+            </div>
         </div>
-        <div>
-          <a href="#" class="nav-link" aria-label="Quiz Time" tab-index="0">Quiz Time</a>
-        </div>
-        <div>
-          <a class="nav-link" aria-label="Point" tab-index="0">Point</a>
-        </div>
-      </header>
     </div>
 
-    <br>
-
-    <div class="row justify-content-center">
-
-      <div class="col-md-9">
-        <div class="video-img-change">
-          <!-- <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/QKO3sqic5fc?si=QsMUb0zmLx-oM3Lj" 
-                  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen></iframe> -->
-          <img id="Image_switch" class="button_img" width="560" height="315" alt="" src="img/Kangaroo_img.jpg" />
+    <!-- Main Content -->
+    <div class="row align-items-center justify-content-center mt-5 main-content">
+        <div class="col-12">
+            <div class="video-img-change d-flex justify-content-center">
+              <img id="Image_switch" class="button_img" width="560" height="315" alt="" src="img/Kangaroo_img.jpg" />
+            </div>
         </div>
-
-      </div>
-
-
     </div>
-    <br>
-
-    <div class="row">
-      <div class="col">
-        <button id="changeImageButton" class="custom-button w-25">Next photo</button>
-
-      </div>
-    </div>
-    <!-- 
-    <div class="row background_chat">
-      <div class="col-4">
-        <img class="chat_icon" alt="" src="img/Kangaroo.svg" width="300px" />
-      </div>
-      <div class="col-6 content-container">
-        <p class="context">Fun fact 1:
-          Grey kangaroo is the most common kangaroo in Queensland.
-          Their habitats spread across the state but mostly along the east coast
-        </p>
-
-
-      </div>
-    </div>
-    <img class="background_img" alt="" src="img/Chat_Background.svg" width="100%"> -->
 
     <!-- Dialog -->
-    <section id="dialog" class="mt-5">
-      <div class="container p-2 wooden-tablet-dialog">
+    <div class="container p-2 wooden-tablet-dialog">
         <div class="row h-100">
-          <div class="col-sm-3 guide" id="guide"></div>
-          <div class="col-sm-8 pt-5 pb-5 fs-4 context" id="text">Fun fact 1: Grey kangaroo is the most common kangaroo in
-            Queensland. Their habitats spread across the state but mostly along the east coast</div>
+            <div class="col-sm-3 guide" id="guide"></div>
+            <div class="col-sm-8 pt-5 pb-5 fs-4" id="text">A majority of the northern territory is covered with deserts. But our kangaroo families here also adapt astonishingly to the environment.</div>
             <div class="col-sm-1 btn next" id="next"></div>
         </div>
-      </div>
-    </section>
+    </div>
 
-  </div>
+    <!-- Background -->
+    <div class="background"></div>
 
-  <script src="js/description_Northern.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 </body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="js/dialog-charactor.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/dialog-charactor.js"></script>
+  <script src="js/description_Northern.js"></script>
 
 </html>
