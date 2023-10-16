@@ -167,10 +167,6 @@ function checkUserAnswer(answer) {
             // Display the next question
             displayCurrentQuestion();
         } else {
-            // for (let i = 0; i < 3; i++) {
-            //     const optionCards = document.getElementById("answer" + i);
-            //     optionCards.removeEventListener("click", optionCardClick);
-            // }
             sleep(2000);
             blackMask();
             displayDialog(2)
