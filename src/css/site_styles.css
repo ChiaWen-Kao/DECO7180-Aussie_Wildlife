@@ -69,3 +69,9 @@
 body {
   overflow: hidden;
 }
+
+.main-content {
+  position: relative;
+  z-index: 20;
+  font-family: 'Lilita One', cursive;
+}
