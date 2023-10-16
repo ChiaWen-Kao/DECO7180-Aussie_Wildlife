@@ -142,12 +142,6 @@ function displayAccessory() {
     }
 }
 
-// function startJourney() {
-//     let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
-//     window.location.href = `General_info.html?guideImage=${encodeURIComponent(guideImage)}`;
-// }
-
-
 /* main flow */
 $(document).ready(function() {
     if (window.location.href.includes("outfit.html")) {
