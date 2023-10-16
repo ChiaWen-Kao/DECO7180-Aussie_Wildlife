@@ -1,39 +1,6 @@
-
-// let currentUtterance = null; // Track the currently speaking utterance
-
-
-// //----------------------------------------------------------------------------------------------
-// //using [SpeechSynthesisUtterance] interface of the [Web Speech API]
-
-
-// function speakContent(text) {
-//     let utterance = new SpeechSynthesisUtterance();
-//     utterance.text = text;
-//     utterance.pitch = 1.2;
-//     utterance.rate = 0.8;
-//     let voices = window.speechSynthesis.getVoices();
-//     let selectedVoice = voices.find(voice => voice.name === "Google UK English Male");
-    
-//     if (selectedVoice) {
-//         utterance.voice = selectedVoice;
-//     } else {
-//         // utterance.voice = voices[0];
-//         console.log('123');
-//     }
-    
-//     currentUtterance = utterance; // Update the currently speaking utterance
-//     window.speechSynthesis.speak(utterance);
-// }
-
-// //----------------------------------------------------------------------------------------------
-
-// const contextElement = document.querySelector('.context');
-// let currentContentIndex = 0;
-
 /*
     display animal guide
 */
-
 var animalGuideColor = "orange";
 var animalGuideAccessory = "";
 
