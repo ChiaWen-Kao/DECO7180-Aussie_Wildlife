@@ -45,12 +45,12 @@
     padding-top:30px;
     font-weight: bold;
 }
-.btn{
+.btn-outline-light{
     background-color: white !important;
     color: black !important;
 }
 
-.btn:hover{
+.btn-outline-light:hover{
     background-color: #E8E8E8 !important;
 }
 
@@ -83,7 +83,7 @@
     padding-top:30px;
     font-weight: bold;
     font-size: 20px;
-    margin-left:70px;
+
 }
 
 /* Dialog */

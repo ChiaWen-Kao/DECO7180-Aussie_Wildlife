@@ -60,6 +60,16 @@ changeImageButton.addEventListener('click', function () {
     updateImage();
 });
 
+const playSoundsButton = document.getElementById('next');
+
+playSoundsButton.addEventListener('click', function () {
+    // Get the content from the .context element
+    const contextText = contextElement.textContent;
+
+    // Speak the content
+    speakContent(contextText);
+});
+
 function updateImage() {
     // Make sure you have fetched data before trying to update the image
     if (imageUrls.length > 0) {
