@@ -1,6 +1,4 @@
-/*
-    Backgound
-*/
+/* Backgound */
 .background {
     position: absolute;
     z-index: 0;
@@ -13,30 +11,7 @@
     opacity: 0.5;
 }
 
-/*
-    Wooden tablet Header
-*/
-.wooden-tablet-header {
-    color: white;
-    font-size: x-large;
-    height: fit-content;
-    font-family: 'Lilita One', cursive;
-    position: relative;
-    z-index: 4;
-    top: 10px;
-    background-position: center center;
-    background-size: cover;
-    background-repeat:no-repeat;
-    text-decoration: none !important;
-}
-
-.nav-links {
-    padding: 20px 0;
-}
-
-/*
-    closet: color palette
-*/
+/* Closet */
 .closet-color {
     height: 50px !important;
     width: 50px !important;
@@ -62,42 +37,13 @@
     border-color: black;
 }
 
-/* Dialog */
-.wooden-tablet-dialog  {
-    position: absolute;
-    z-index: 4;
-    bottom: 10px;
-    right: 0;
-    left: 0;
-    height: 180px;
-    background-image: url('../img/wooden-dialog.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    font-family: 'Lilita One', cursive;
-}
-
-.guide {
-    background-image: url('../img/human-guide.svg');
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-}
-
-.next {
-    background-image: url("https://img.icons8.com/matisse/0/E6C594/next.png");
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position-x: 30%;
-    background-position-y: 90%;
-}
-
-.next {
-    border-style: none !important;
-}
-
 /* outfit */
 .outfit {
     position: relative;
     z-index: 10;
+}
+
+.outfit a {
+    font-family: 'Lilita One', cursive !important;
+    color: black !important;
 }

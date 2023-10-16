@@ -1,7 +1,6 @@
 // Pass parameters via url
 function startJourney() {
   let guideImage = document.getElementById("animalGuide-image").getAttribute("src");
-  alert(`url("${guideImage}")`);
   window.location.href = `General_info.html?guideImage=${encodeURIComponent(`url("${guideImage}")`)}`;
 }
 
