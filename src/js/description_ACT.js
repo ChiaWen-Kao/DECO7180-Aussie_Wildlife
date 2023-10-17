@@ -16,6 +16,8 @@ const contentArray = [
     // Add more content as needed
 ];
 
+const contextElement = document.getElementById("text");
+let currentContentIndex = 0;
 //----------------------------------------------------------------------------------------------
 //using [SpeechSynthesisUtterance] interface of the [Web Speech API]
 
@@ -40,24 +42,22 @@ function speakContent(text) {
 
 //----------------------------------------------------------------------------------------------
 
-const contextElement = document.querySelector('.context');
-let currentContentIndex = 0;
 
-// Add a click event listener to the button
-changeImageButton.addEventListener('click', function () {
-    currentContentIndex = (currentContentIndex + 1) % contentArray.length;
-    contextElement.textContent = contentArray[currentContentIndex];
+// // Add a click event listener to the button
+// changeImageButton.addEventListener('click', function () {
+//     currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+//     contextElement.textContent = contentArray[currentContentIndex];
 
-    // Stop the current utterance (if any)
-    if (currentUtterance) {
-        window.speechSynthesis.cancel(currentUtterance);
-    }
+//     // Stop the current utterance (if any)
+//     if (currentUtterance) {
+//         window.speechSynthesis.cancel(currentUtterance);
+//     }
 
-    // Create and speak the new utterance
-    speakContent(contextElement.textContent);
+//     // Create and speak the new utterance
+//     speakContent(contextElement.textContent);
 
-    updateImage();
-});
+//     updateImage();
+// });
 
 const playSoundsButton = document.getElementById('next');
 
@@ -67,6 +67,24 @@ playSoundsButton.addEventListener('click', function () {
 
     // Speak the content
     speakContent(contextText);
+
+    // Change image
+    if (currentContentIndex != 0) {
+        currentContentIndex = (currentContentIndex + 1) % contentArray.length;
+        contextElement.textContent = contentArray[currentContentIndex];
+    
+        // Stop the current utterance (if any)
+        if (currentUtterance) {
+            window.speechSynthesis.cancel(currentUtterance);
+        }
+    
+        // Create and speak the new utterance
+        speakContent(contextElement.textContent);
+    
+        updateImage();
+    } else {
+        currentContentIndex ++;
+    }
 });
 
 function updateImage() {
