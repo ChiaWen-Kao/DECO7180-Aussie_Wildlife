@@ -72,7 +72,7 @@
   background-image: url("https://img.icons8.com/matisse/100/medium-volume.png");
   background-size: 40%;
   background-repeat: no-repeat;
-  background-position-x: 100%;
+  /* background-position-x: 100%; */
   background-position-y: 90%;
   border-style: none;
 }
