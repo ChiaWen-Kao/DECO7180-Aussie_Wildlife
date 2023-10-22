@@ -1,5 +1,13 @@
 # Aussie Wildlife
-
+This is a brief introduction of Aussie wildlife
+1. [Introduction](#introduction)
+2. [Purpose](#purpose)
+3. [Key Features](#key-features)
+4. [User Flow](#user-flow)
+5. [Uses of API](#uses-of-api)
+6. [Team Member](#team-member)
+7. [External Resources](#external-resources)
+8. [Reference](#refernce)
 ---
 
 ## Introduction
@@ -12,7 +20,7 @@ Guided by this vision, our team has developed an interactive learning platform f
 
 ## Key Features
 
-### Content sourced from real-time API
+### <a name="uses-api"></a>Content sourced from real-time API
 In the distribution map and specific regional animal photos, we utilize API data from ALA. In uses of API are the datasets employed in Aussie Wildlife. We've processed all the data to determine the most frequently observed locations in each state and highlighted them, allowing children to easily identify which parts of Australia have the highest observations of wild animals.
 
 ![Alt text](image-2.png)
@@ -30,7 +38,10 @@ The primary objective of the learning process is to ensure children absorb the i
 
 ![Alt text](image-3.png)
 
-## Uses of API
+# User Flow
+![Alt text](image-4.png)
+
+# Uses of API
 | Name | Website Url | API Url | Filter |
 |------|-------------|---------|--------|
 | Wild kangaroos observed within Australia | [url](https://biocache.ala.org.au/occurrence/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3APRESERVED_SPECIMEN%20AND%20taxa%3A%22Macropodidae%22%20AND%20institution_uid%3Ain4&qualityProfile=ALA&qc=-_nest_parent_%3A*&fq=occurrence_decade_i%3A%222010%22#tab_mapView) | [url](https://api.ala.org.au/occurrences/occurrences/search?q=species_group%3AMammals%20AND%20country%3AAustralia%20AND%20basis_of_record%3APRESERVED_SPECIMEN%20AND%20taxa%3A%22Macropodidae%22%20AND%20institution_uid%3Ain4&qualityProfile=ALA&fq=occurrence_decade_i%3A%222010%22&qc=-_nest_parent_%3A*) | **Country:** Australia<br>**Institution:** Australian Museum<br>**SpeciesGroup:** Mammals<br>**Family:** Macropodidae<br>**Time:** 2010 October |
@@ -44,7 +55,7 @@ The primary objective of the learning process is to ensure children absorb the i
 ---
 
 # Team Member
-Developed in the DECO7180 - Design Studio course at the University of Queensland.
+Developed in the DECO7180 - Design Computing Studio course at the University of Queensland.
 
 | Name | Program |
 |----- |---------|
@@ -52,14 +63,10 @@ Developed in the DECO7180 - Design Studio course at the University of Queensland
 | Thi Hong Nhung Le | Master of Entrepreneurship and Innovation |
 | Li-Chih Tseng | Master of Interaction Design |
 | Povie Pabia | Master of Entrepreneurship and Innovation |
----
 
 # External Resources
 ### Frontend Framework
 [Bootstrap](https://getbootstrap.com/)
 ### Third Part API
-| Source | Purpose |
-|------|--------|
-| [Leaflet](https://leafletjs.com/) | Map display |
-| [Speech SynthesisUtterance](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance) | Speak aloud function |
-
+Leaflet. (2023, May 18). Leaflet 1.9.4: a JavaScript library for interactive maps. Leaflet. https://leafletjs.com/
+Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
