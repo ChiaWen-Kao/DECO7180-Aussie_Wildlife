@@ -52,7 +52,12 @@ The primary objective of the learning process is to ensure children absorb the i
 | Photos of kangaroos observer in Western Australia | [url](https://biocache.ala.org.au/occurrence/search?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=state%3A%22Western%20Australia%22&fq=occurrence_decade_i%3A%222020%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr1902%22&fq=common_name%3A%22Western%20Grey%20Kangaroo%22&qc=-_nest_parent_%3A*&fq=month%3A%224%22#tab_recordImages) | [url](https://api.ala.org.au/occurrences/occurrences/search?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=state%3A%22Western%20Australia%22&fq=occurrence_decade_i%3A%222020%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr1902%22&fq=common_name%3A%22Western%20Grey%20Kangaroo%22&fq=month%3A%224%22&qc=-_nest_parent_%3A*) | **States:** Western Australia<br>**Institution:** Earth Guardians Weekly Feed<br>**Vernacular Name:** Western Grey Kangaroo<br>**Time:** 2020 April<br>**Multimedia**: Image |
 | Photos of kangaroos observer in Australian Capital Territory| [url](https://biocache.ala.org.au/occurrence/search?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=state%3A%22Australian%20Capital%20Territory%22&fq=occurrence_decade_i%3A%222010%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr19123%22&fq=common_name%3A%22Eastern%20Grey%20Kangaroo%22&qc=-_nest_parent_%3A*&fq=month%3A%222%22#tab_recordImages) | [url](https://api.ala.org.au/occurrences/occurrences/search?q=text%3Aobservation%20AND%20taxa%3A%22kangaroo%22&qualityProfile=ALA&fq=state%3A%22Australian%20Capital%20Territory%22&fq=occurrence_decade_i%3A%222010%22&fq=multimedia%3A%22Image%22&fq=data_resource_uid%3A%22dr19123%22&fq=common_name%3A%22Eastern%20Grey%20Kangaroo%22&fq=month%3A%222%22&qc=-_nest_parent_%3A*) | **States:** Australian Capital Territory Australia<br>**Institution:** NatureMapr<br>**Vernacular Name:** Eastern Grey Kangaroo<br>**Time:** 2010 February<br>**Multimedia**: Image |
 
----
+# External Resources
+### Frontend Framework
+[Bootstrap](https://getbootstrap.com/)
+### Third Part API
+Leaflet. (2023, May 18). Leaflet 1.9.4: a JavaScript library for interactive maps. Leaflet. https://leafletjs.com/
+Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
 
 # Team Member
 Developed in the DECO7180 - Design Computing Studio course at the University of Queensland.
@@ -63,10 +68,3 @@ Developed in the DECO7180 - Design Computing Studio course at the University of 
 | Thi Hong Nhung Le | Master of Entrepreneurship and Innovation |
 | Li-Chih Tseng | Master of Interaction Design |
 | Povie Pabia | Master of Entrepreneurship and Innovation |
-
-# External Resources
-### Frontend Framework
-[Bootstrap](https://getbootstrap.com/)
-### Third Part API
-Leaflet. (2023, May 18). Leaflet 1.9.4: a JavaScript library for interactive maps. Leaflet. https://leafletjs.com/
-Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
