@@ -65,5 +65,5 @@ Developed in the DECO7180 - Design Computing Studio course at the University of 
 ### Frontend Framework
 [Bootstrap](https://getbootstrap.com/)
 ### Third Part API
-Leaflet. (2023, May 18). Leaflet 1.9.4: a JavaScript library for interactive maps. Leaflet. https://leafletjs.com/
+Leaflet. (2023, May 18). Leaflet 1.9.4: a JavaScript library for interactive maps. Leaflet. https://leafletjs.com/<br>
 Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
