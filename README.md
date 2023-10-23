@@ -8,7 +8,6 @@ This is a brief introduction of Aussie wildlife
 6. [Team Member](#team-member)
 7. [External Resources](#external-resources)
 8. [Reference](#refernce)
----
 
 ## Introduction
 Aussie Wildlife is an educational initiative that uses game-based learning to bring the wonders of Australian wildlife closer to students, educators, and anyone interested in nature. Through a dynamic online platform, users can embark on a virtual journey through the diverse ecosystems of Australia, where they can discover, learn, and appreciate the beauty and significance of our native fauna.
