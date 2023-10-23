@@ -59,7 +59,7 @@ Developed in the DECO7180 - Design Computing Studio course at the University of 
 | Chia-Wen Kao | Master of Interaction Design |
 | Thi Hong Nhung Le | Master of Entrepreneurship and Innovation |
 | Li-Chih Tseng | Master of Interaction Design |
-| Povie Pabia | Master of Entrepreneurship and Innovation |
+| Rovie Pabia | Master of Entrepreneurship and Innovation |
 
 # External Resources
 ### Frontend Framework
