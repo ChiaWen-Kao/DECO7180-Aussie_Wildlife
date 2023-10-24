@@ -25,7 +25,7 @@ const contextElement = document.querySelector('.context');
 let currentContentIndex = 0;
 
 
-const playSoundsButton = document.getElementById('next');
+const playSoundsButton = document.getElementById('voice');
 
 playSoundsButton.addEventListener('click', function () {
     // Get the content from the .context element
