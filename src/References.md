@@ -13,6 +13,10 @@ A. Quiz
 [9]Feller, B. (2018, August 8). Giant Grasshopper. unsplash. https://unsplash.com/photos/_sFfGu4cGvc
 
 
+B. Videos
+[1]FreeSchool. [FreeSchool]. (2022, October 24). All About Kangaroos for Kids - Kangaroo Facts for Children: FreeSchool [Video]. YouTube. https://www.youtube.com/watch?v=QKO3sqic5fc&t=2s
+[2]Kiddopedia. [Kiddopedia]. (2016, July 12). Kangaroo for Kids - Facts and Information about Kangaroos for Children, Kangaroo Videos | Kiddopedia [Video]. YouTube. https://www.youtube.com/watch?v=MaBsX7KL78Q
+[3]Real Science. [Real Science]. (2023, April 15). The Insane Biology of: Kangaroos [Video]. YouTube. https://www.youtube.com/watch?v=RwwgbVHE8Dk
 
-Speech web API
+C. Speech web API
 [1] Mozilla. (n.d.). SpeechSynthesisUtterance. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance

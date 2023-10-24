@@ -110,7 +110,7 @@ const optionImgLists = {
     ],
     option2Img: [
         "img/quiz/kangaroo/hop.jpg",                      // (Phillips, n.d.)
-        "img/quiz/kangaroo/swim.gif",                     // (Tarris, n.d.)
+        "img/quiz/kangaroo/swimming.jpg",                     // (Tarris, n.d.)
         "img/quiz/kangaroo/move_backwards.jpg"            // (Pappas, 2014)
     ],
     option3Img: [
